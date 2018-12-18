@@ -15,16 +15,10 @@
 sudo sed -i '1s/^/127.0.0.1       editor.local\n/' /etc/hosts
 ```
 
-- Create container's settings from examples:
+- Create SQL copy from example:
 
 ```
 cp mysql/docker-entrypoint-initdb.d/createdb.sql.example mysql/docker-entrypoint-initdb.d/createdb.sql
-```
-```
-cp nginx/sites/editor.conf.example nginx/sites/editor.conf
-```
-```
-cp php-worker/supervisord.d/laravel-worker.conf.example php-worker/supervisord.d/laravel-worker.conf
 ```
 - `docker-compose build nginx mysql php-worker`
 

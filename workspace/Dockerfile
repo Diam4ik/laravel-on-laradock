@@ -911,3 +911,9 @@ RUN apt-get clean && \
 
 # Set default work directory
 WORKDIR /var/www
+
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod 777 /usr/local/bin/entrypoint.sh
+RUN ln -s usr/local/bin/entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh"]

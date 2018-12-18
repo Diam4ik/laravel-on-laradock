@@ -93,3 +93,9 @@ RUN php -v | head -n 1 | grep -q "PHP ${PHP_VERSION}."
 #
 
 WORKDIR /etc/supervisor/conf.d/
+
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod 777 /usr/local/bin/entrypoint.sh
+RUN ln -s usr/local/bin/entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh"]
